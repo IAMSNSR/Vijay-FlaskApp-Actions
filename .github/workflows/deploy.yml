@@ -1,0 +1,14 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main   # run when pushing to main
+
+jobs:
+  checkout:
+    name: Checkout & Setup
+    runs-on: Agent-1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
