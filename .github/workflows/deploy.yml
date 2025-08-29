@@ -8,7 +8,7 @@ on:
 jobs:
   checkout:
     name: Checkout & Setup
-    runs-on: [self-hosted, Agent-1]   # 👈 safer than just Agent-1
+    runs-on: self-hosted   # 👈 safer than just Agent-1
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
