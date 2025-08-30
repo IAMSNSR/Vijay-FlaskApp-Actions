@@ -50,6 +50,9 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y trivy
 
+      - name: pull image
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/flask-app:latest
+
       - name: Scan latest Docker image
         run: |
           trivy image --exit-code 0 --severity HIGH,CRITICAL ${{ secrets.DOCKERHUB_USERNAME }}flask-app:latest
